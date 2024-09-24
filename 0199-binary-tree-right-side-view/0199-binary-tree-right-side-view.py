@@ -9,13 +9,14 @@ class Solution:
         res = []
 
         def dfs(root, height):
-            if not root:
-                return
             if len(res) == height:
                 res.append(root.val)
-            dfs(root.right, height + 1)
-            dfs(root.left, height + 1)
+            if root.right:
+                dfs(root.right, height + 1)
+            if root.left:
+                dfs(root.left, height + 1)
 
-        dfs(root, 0)
+        if root:
+            dfs(root, 0)
         return res
 
