@@ -19,5 +19,7 @@ class Solution:
         values.sort()
         res = values[1] - values[0]
         for i in range(2, len(values)):
-            res = min(values[i]-values[i-1], res)
+            diff = values[i]-values[i-1]
+            if diff < res:
+                res = diff
         return res
