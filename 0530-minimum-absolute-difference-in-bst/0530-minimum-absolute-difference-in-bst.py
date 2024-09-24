@@ -17,7 +17,7 @@ class Solution:
         values = []
         dfs(root)
         values.sort()
-        res = float('inf')
-        for i in range(1, len(values)):
-            res = min(abs(values[i]-values[i-1]), res)
+        res = values[1] - values[0]
+        for i in range(2, len(values)):
+            res = min(values[i]-values[i-1], res)
         return res
