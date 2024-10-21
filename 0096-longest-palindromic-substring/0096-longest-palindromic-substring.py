@@ -5,4 +5,3 @@ class Solution:
                 substr = s[j:j+i]
                 if substr == substr[::-1]:
                     return substr
-        return -1
